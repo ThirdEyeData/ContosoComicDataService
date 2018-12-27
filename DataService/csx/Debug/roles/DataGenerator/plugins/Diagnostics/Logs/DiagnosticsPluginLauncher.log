@@ -1,0 +1,17 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:02 AM] Emulator config file set to C:\ThirdEyeCSS\Comics-Embedded Power BI\DataService\DataService\csx\Debug\roles\DataGenerator\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] DiagnosticsStoreRootPath set to: C:\Users\lenovo\AppData\Local\dftmp\Resources\b2f5ad27-3630-45e9-b200-411e37ccb23a
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Loading config file: C:\ThirdEyeCSS\Comics-Embedded Power BI\DataService\DataService\csx\Debug\roles\DataGenerator\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Config file to read: C:\ThirdEyeCSS\Comics-Embedded Power BI\DataService\DataService\csx\Debug\roles\DataGenerator\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Emulator config file set to C:\ThirdEyeCSS\Comics-Embedded Power BI\DataService\DataService\csx\Debug\roles\DataGenerator\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:08:03 AM] Resetting DiagnosticPlugin
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:09:14 AM] DiagnosticsPlugin launched successfully with new configuration
+DiagnosticsPluginLauncher.exe Information: 0 : [12/27/2018 5:09:14 AM] DiagnosticPlugin exited with code 0

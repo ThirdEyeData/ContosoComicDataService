@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="DataService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="5" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="DataGenerator">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=contosocomicrole01;AccountKey=$(_contosocomicrole01.key_)" />
+      <Setting name="ClientID" value="b253e49b-07fd-48df-896a-83b00596ca53" />
+      <Setting name="RedirectUri" value="https://dev.powerbi.com/Apps/SignInRedirect" />
+      <Setting name="ResourceUri" value="https://analysis.windows.net/powerbi/api" />
+      <Setting name="AuthorityUri" value="https://login.windows.net/common" />
+      <Setting name="DatasetName" value="ContosoComicRestDataset" />
+      <Setting name="TableName" value="Visits" />
+      <Setting name="UserName" value="vishal@onthirdeye.com" />
+      <Setting name="Password" value="VisNai@#567" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="727e8a16-9295-4843-9223-2bca68653ea9" />
+      <Setting name="SQLConnectionString" value="Data Source=tcp:contosocomicsvr.database.windows.net,1433;Initial Catalog=comicsdb;Persist Security Info=False;User ID=sqladmin;Password=Pass@Word01;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;" />
+      <Setting name="SummaryTableName" value="Summary" />
+      <Setting name="MarketingCost" value="200000" />
+      <Setting name="PowerBIPushURL" value="https://api.powerbi.com/beta/3d7a3f90-1d2c-4d91-9b49-52e098cf9eb8/datasets/23480d4e-568d-49a9-a1bc-39aee4710c64/rows?key=%2FgKCf8lgSIEg59peNSwBuxhyak7FVDLto6NgRaRReVeSYXXbIyfk1HizLSMz0sONu4VJZiBLt%2ByCMQ25aMcZug%3D%3D" />
+      <Setting name="GroupId" value="77af70eb-3bbe-4198-a328-050f2b5ab262" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
