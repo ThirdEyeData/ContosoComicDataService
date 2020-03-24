@@ -1,0 +1,902 @@
+/*====================================== reset.css is here ========================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+.clear {
+    clear: both;
+    font-size: 1px;
+    line-height: 1px;
+    display: block;
+    height: 0;
+}
+
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.clrflt {
+    clear: both;
+}
+
+.last {
+    margin: 0 !important;
+}
+
+.pad_last {
+    padding: 0 !important;
+}
+
+.no_bg {
+    background: none !important;
+}
+
+.no_bor {
+    border: 0 !important;
+}
+
+.darken {
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    width: 100%;
+    height: 100%; */
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    background: url("Black.png");
+}
+
+.runproc1 {
+    top: 40%;
+    left: 45%;
+    position: fixed;
+    width: 250px;
+}
+
+.runproc2 {
+    top: 80%;
+    left: 49%;
+    position: fixed;
+    font-family: 'Segoe UI';
+    color: #ffffff;
+}
+
+l {
+    box-sizing: border-box;
+    padding: 0 0 0 0;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+    display: block;
+}
+
+a {
+    display: inline-block;
+    color: #000;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+    a, a:hover {
+        text-decoration: none;
+        outline: none;
+    }
+
+figure {
+    line-height: 0;
+}
+/**************************************************************************************/
+h1 {
+    font-size: 67px;
+    line-height: 68px;
+    color: #000;
+    font-weight: 900;
+    margin: 0;
+}
+
+h2 {
+    font-size: 55px;
+    line-height: 57px;
+    color: #000;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 44px;
+    line-height: 42px;
+    color: #212121;
+    font-weight: 400;
+    font-family: 'SegoeUI-SemiBold';
+}
+
+h4 {
+    font-size: 32px;
+    line-height: 34px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+    color: #212121;
+}
+
+h5 {
+    font-size: 21px;
+    line-height: 38px;
+    margin: 0;
+    font-weight: bold;
+    color: #26222d;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+    color: #212121;
+}
+
+p {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: normal;
+    color: #737373;
+    margin: 0;
+    font-family: 'SegoeUI-Regular';
+}
+
+/*======================================================= Index page ======================================================*/
+/* fonts */
+
+@font-face {
+    font-family: 'SegoeUI-SemiBold';
+    src: url('../fonts/SegoeUI-SemiBold/SegoeUI-SemiBold.eot?') format('embedded-opentype'), url('../fonts/SegoeUI-SemiBold/SegoeUI-SemiBold.woff') format('woff'), url('../fonts/SegoeUI-SemiBold/SegoeUI-SemiBold.ttf') format('truetype'), url('../fonts/SegoeUI-SemiBold/SegoeUI-SemiBold.svg#SegoeUI-SemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SegoeUI-Bold';
+    src: url('../fonts/SegoeUI-Bold/SegoeUI-Bold.eot?') format('embedded-opentype'), url('../fonts/SegoeUI-Bold/SegoeUI-Bold.woff') format('woff'), url('../fonts/SegoeUI-Bold/SegoeUI-Bold.ttf') format('truetype'), url('../fonts/SegoeUI-Bold/SegoeUI-Bold.svg#SegoeUI-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SegoeUI-Regular';
+    src: url('../fonts/SegoeUI-Regular/SegoeUI-Regular.eot?') format('embedded-opentype'), url('../fonts/SegoeUI-Regular/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Regular/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Regular/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Design */
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    height: 100%;
+    font-weight: normal;
+}
+
+.wrapper {
+    margin: 0 auto;
+    height: 100%;
+    min-height: 100%;
+    height: auto;
+    position: relative;
+    transition: all ease-in-out 1s;
+    -webkit-transition: all ease-in-out 0.3s;
+    -ms-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    /* padding: 83.39px 0 0 0; */
+    max-width: 100%;
+    background: url(../images/backgroundimg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+    .wrapper:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #000;
+        left: 0;
+        right: 0;
+        margin: 0 auto; /* z-index: 1; */
+        top: 0;
+        position: absolute;
+        opacity: 0.5;
+    }
+
+.container {
+    max-width: 1605px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+/* header start here */
+.header-right {
+}
+.campaig-results span {
+    width: 86.6%;
+    background: #e6e6e6;
+    height:70px;
+}
+.campaig-results p {
+    width: 13%;
+    background: #e6e6e6;
+    margin: 0 0 0 52px;
+    text-align: center;
+    padding: 26px 0;
+    height:70px;
+}
+    .campaig-results span a {
+        background: #a1a1a1;
+        width: 30%;
+        height: 70px;
+        text-align: left;
+        font-family: 'SegoeUI-SemiBold';
+        padding: 20px 51px;
+        text-transform: capitalize;
+        font-size: 20px;
+        color: #f2f2f2
+    }
+.campaig-results.campaig-2 span a small {
+    color: #f2f2f2;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'SegoeUI-Bold';
+    text-align: right;
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+}
+.campaig-results.campaig-2 span a {
+    background: #00a4ef;
+    width: 80%;
+    padding: 21px 19px 23px;
+}
+
+.campaig-results.campaig-3 span a {
+    background: #a1a1a1;
+    width: 52.8%;
+}
+
+header {
+    background: #f2f2f2;
+    padding: 0 0 45px 0;
+    z-index: 1;
+    position: relative;
+}
+
+.headleft {
+    display: inline-block;
+    float: left;
+    padding: 2.5% 0 0 13.5%;
+}
+
+    .headleft .logo.logo2 {
+        display: none;
+    }
+
+.logo {
+    display: inline-block;
+    background: #e6e6e6;
+    padding: 22px 33px 28px;
+}
+
+header h3 {
+}
+
+.header-right {
+    display: inline-block;
+    float: right;
+    padding: 46px 69px 0 0;
+}
+
+.myacount {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding: 12px 0 12px 63px;
+}
+
+    .myacount:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background: url(../images/acounticon.png) no-repeat center #7fba00;
+        background-size: 25px auto;
+        border-radius: 100%;
+    }
+
+    .myacount a {
+        font-family: 'SegoeUI-SemiBold';
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+.dashboard {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding: 5px 29px 12px 57px;
+}
+
+    .dashboard:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 0;
+        width: 48px;
+        height: 48px;
+        background: url(../images/dashboarico.png) no-repeat center #f25022;
+        background-size: 25px auto;
+        border-radius: 100%;
+    }
+
+.nice-select {
+    border: 0;
+    box-shadow: none;
+}
+
+.nice-select {
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'SegoeUI-SemiBold';
+    padding: 13px 33px 6px 8px;
+    background: none;
+}
+
+.maincontent {
+    padding: 73px 59px 73px 41px;
+    position: relative;
+    z-index: 1;
+}
+
+.recommended {
+    background: #f7f7f7;
+    padding: 68px 76px;
+    width: 87.9%;
+    float: right;
+}
+
+    .recommended h3 {
+        font-size: 40px;
+        line-height: 42px;
+        letter-spacing: 0.63px;
+        font-family: 'SegoeUI-Bold';
+    }
+
+.campaig-1 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0 0 40px 11px;
+}
+
+    .campaig-1 a {
+        width: 404px;
+        background: #00a4ef;
+        padding: 27px;
+        text-align: center;
+        font-family: 'SegoeUI-Bold';
+        font-size: 22px;
+        line-height: 26px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .campaig-1 p {
+        -webkit-flex: 1; /* Safari 6.1+ */
+        -ms-flex: 1; /* IE 10 */
+        flex: 1;
+        padding: 5px 0 5px 56px;
+        font-size: 21px;
+        line-height: 32px;
+    }
+
+        .campaig-1 p strong {
+            font-family: 'SegoeUI-Bold';
+        }
+
+.campaign-content {
+    padding: 63px 0;
+}
+
+.revenue-middle.hide-desk {
+    display: none;
+}
+
+
+
+/*revenue*/
+.revenue-main {
+    float: left;
+    width: 21.9%;
+    padding: 0;
+}
+
+    .revenue-main ul {
+    }
+
+        .revenue-main ul li {
+            display: block;
+            padding: 0 2px 38px 0;
+        }
+
+.revenue-blk1 {
+    position: relative;
+}
+
+.revenue-blk1-cnt {
+    position: absolute;
+    top: 35px;
+    left: 32px;
+}
+
+.revenue-blk1 span {
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 24px;
+    font-family: 'SegoeUI-SemiBold';
+    display: block;
+    padding: 0 0 36px 0;
+}
+
+.revenue-blk1 strong {
+    color: #ffffff;
+    font-size: 55px;
+    line-height: 57px;
+    font-family: 'SegoeUI-SemiBold';
+    display: block;
+    padding: 0 0 25px;
+}
+
+    .revenue-blk1 strong.select-active {
+        background: #feeee9;
+        color: #1ea010;
+    }
+
+    .revenue-blk1 strong.select-active {
+        background: #feeee9;
+        color: #1ea010;
+        padding: 10px;
+        display: inline-block;
+    }
+
+.revenue-blk2 {
+    background: #ffffff;
+    border: 1px solid #dadada;
+    padding: 35px 36px 49px;
+    margin: 0 0;
+}
+
+    .revenue-blk2 h5 {
+        text-align: left;
+        color: #010101;
+        font-family: 'SegoeUI-SemiBold';
+        font-size: 21px;
+        line-height: 23px;
+        display: block;
+        padding: 0 0 11px;
+    }
+
+    .revenue-blk2 small {
+        color: #010101;
+        font-family: 'SegoeUI-Regular';
+        font-size: 14px;
+        line-height: 16px;
+        display: block;
+        padding: 0 0 28px;
+        text-transform: uppercase;
+    }
+
+.revenue-middle {
+    width: 55.9%;
+    padding: 0 44px;
+}
+
+.revenue-blk1.blk3 {
+    padding: 35px 35px 32px;
+}
+
+    .revenue-blk1.blk3 small {
+        padding: 0 0 15px;
+    }
+
+.revenue-main.right1 {
+    padding: 0;
+}
+
+.revenue-blk1.blk5 {
+    padding: 37px 14px 6px 14px;
+}
+
+    .revenue-blk1.blk5 h5 {
+        padding: 0 0 25px 13px;
+    }
+
+.revenue-middle .sales {
+    margin: 0 -19px;
+}
+
+    .revenue-middle .sales li {
+        width: 50%;
+        float: left;
+        padding: 0 19px 40px;
+    }
+
+.revenue-main.revenue-middle.month {
+    width: 100%;
+    padding: 0 7px 0 10px;
+}
+
+.revenue-blk1.blue strong.select-active {
+    padding: 5px 46px 12px 7px;
+    position: relative;
+    color: #ff2e12
+}
+
+    .revenue-blk1.blue strong.select-active:after {
+        content: '';
+        position: absolute;
+        right: 3px;
+        top: 37%;
+        transform: translate(-50%);
+        -webkit-transform: translate(-50%);
+        -o-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+        -moz-transform: translate(-50%);
+        background: url(../images/icon1.png)no-repeat;
+        width: 22px;
+        height: 20px;
+    }
+
+.revenue-blk1-cnt.blue {
+    left: 19px;
+}
+
+    .revenue-blk1-cnt.blue span {
+        padding: 0 0 30px 11px;
+    }
+
+.revenue-blk2.blk3 small {
+    padding: 0 0 15px;
+}
+
+.revenue-blk2.blk3 {
+    padding: 35px 36px 32px;
+}
+
+.revenue-blk2.blk5 {
+    padding: 38px 13px 34px;
+}
+
+    .revenue-blk2.blk5 h5 {
+        padding: 0 0 25px 14px;
+    }
+
+.revenue-blk1 figure img {
+    width: 100%;
+}
+
+.revenue-blk2.month1 small {
+    padding: 0 0 14px;
+}
+
+.revenue-blk2.month2 h5 {
+    padding: 0 0 41px;
+}
+
+.revenue-blk2.month1 {
+    padding: 35px 36px 34px
+}
+
+.revenue-blk2.blk7 small {
+    padding: 0 0 13px;
+}
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 179px;
+    height: 100%;
+    background: hsla(210, 3%, 75%, 0.92);
+    overflow: auto;
+}
+
+.revenue-blk2.blk7 {
+    padding: 35px 36px 34px;
+}
+
+.revenue-main.revenue-sales {
+    width: 100%;
+    padding: 15px 0 15px 0;
+}
+
+    .revenue-main.revenue-sales ul li {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 15px;
+    }
+
+    .revenue-main.revenue-sales ul {
+        font-size: 0;
+        margin: 0 -15px;
+    }
+
+.recommended > p {
+    color: #000000;
+    font-size: 16px;
+    line-height: 12px;
+    font-family: 'SegoeUI-Regular';
+    padding: 0 0 7px;
+}
+
+.side-bar ul {
+    text-align: center;
+    padding: 23px 0;
+}
+
+    .side-bar ul li {
+        padding: 10px 0 10px 0;
+    }
+
+        .side-bar ul li > a {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            background: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 20px 5px;
+        }
+
+        .side-bar ul li span {
+            width: 34px;
+            height: 34px;
+            background: url(../images/menu-icon1.png) no-repeat center;
+            background-size: contain;
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        .side-bar ul li.side-icon1:hover span {
+            background: url(../images/menu-icon-hover1.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon2:hover span {
+            background: url(../images/menu-icon-hover2.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon3:hover span {
+            background: url(../images/menu-icon-hover3.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon4:hover span {
+            background: url(../images/menu-icon-hover4.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon5:hover span {
+            background: url(../images/menu-icon-hover5.png) no-repeat center;
+            width: 38px;
+            height: 38px;
+        }
+
+        .side-bar ul li.side-icon2 span {
+            background: url(../images/menu-icon2.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon3 span {
+            background: url(../images/menu-icon3.png) no-repeat center;
+            width: 38px;
+            height: 44px;
+        }
+
+        .side-bar ul li.side-icon4 span {
+            background: url(../images/menu-icon4.png) no-repeat center;
+        }
+
+        .side-bar ul li.side-icon5 span {
+            background: url(../images/menu-icon5.png) no-repeat center;
+        }
+
+        .side-bar ul li:hover a {
+            background: #00a4ef;
+        }
+
+        .side-bar ul li:hover small {
+            color: #fff;
+        }
+
+.side-bar small {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    font-family: 'SegoeUI-SemiBold';
+    text-transform: capitalize;
+    text-align: center;
+    display: block;
+}
+
+.side-bar ul li.active a:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background: #81bc02;
+    border-radius: 100%;
+}
+
+
+
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="radio"], input[type="checkbox"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], input[type="button"], input[type="submit"], textarea, button, select {
+    -webkit-appearance: none; /*Safari/Chrome*/
+    -moz-appearance: none; /*Firefox*/
+    -ms-appearance: none; /*IE*/
+    -o-appearance: none; /*Opera*/
+}
+
+
+
+.side_bar_inn, menu {
+    display: none;
+    text-align: center;
+}
+
+#nav-icon {
+    width: 39px;
+    height: 30px;
+    position: relative;
+    margin: 0px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    display: none;
+}
+
+    #nav-icon span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #212121;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+        #nav-icon span:nth-child(1) {
+            top: 0px;
+        }
+
+        #nav-icon span:nth-child(2) {
+            top: 11px;
+        }
+
+        #nav-icon span:nth-child(3) {
+            top: 22px;
+        }
+
+.open #nav-icon span:nth-child(1) {
+    top: 2px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.open #nav-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.open #nav-icon span:nth-child(3) {
+    top: 2px;
+    transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.nice-select:after {
+    border-bottom: 2px solid #000000;
+    border-right: 2px solid #000000;
+    margin-top: -1px;
+}

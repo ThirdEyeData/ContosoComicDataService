@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Contoso Comic Store</title>
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="@Url.Content("~/assets/intro.js/introjs.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/assets/Veniamin/nice-select.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/assets/Veniamin/style-ven.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/assets/Veniamin/responsive.css")" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+
+        * {
+            font-family: 'SegoeUI-Regular';
+        }
+
+        .modal {
+            overflow-y: scroll;
+        }
+    </style>
+
+    <script src="https://npmcdn.com/es6-promise@3.2.1"></script>
+    <script src="@Url.Content("~/scripts/powerbi.js")"></script>
+    <script src="@Url.Content("~/scripts/intro.js")"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="@Url.Content("~/scripts/script.js")"></script>
+    <script>
+        $(document).ready(function () {
+            var path = window.location.pathname;
+            if (path.includes('Financials')) {
+                $('.scon2').addClass("active");
+            }
+            else if (path.includes('Campaign')) {
+                $('.scon3').addClass("active");
+            }
+            else {
+                $('.scon1').addClass("active");
+                first = "@Session["First"]";
+                if (first == "")
+                {
+                    introJs().start();
+                    @{ Session["First"] = "Yes";}
+
+                }
+            }
+        });
+    </script>
+    <link rel="shortcut icon" href="@Url.Content("~/assets/images/favicon.png")" />
+
+
+    <script type='text/javascript'>
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: 'f50a30b8-5d15-4667-b4d0-01631770f8a5'
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="clearfix">
+            <div class="headleft">
+                <a href="#" class="logo logo2">
+                    <img src="@Url.Content("~/assets/images/logo2.png")" width="113" height="100" alt="logo">
+                </a>
+                <h3 style="font-size: 27px">Contoso Comics Store</h3>
+            </div>
+            <div class="header-right clearfix">
+                <div class="myacount">
+                    <a href="#">My Account</a>
+                </div>
+            </div>
+        </header>
+        <div class="menu">
+            <div id="nav-icon">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="side_bar_inn">
+            <div class="side-bar">
+                <a href="#" class="logo">
+                    <figure><img src="@Url.Content("~/assets/images/logo.png")" width="113" height="100" alt="logo"></figure>
+                </a>
+                <ul>
+                    <li class="scon1 side-icon1">
+                        <a href="/Home/Index">
+                            <span></span>
+                            <small>Home</small>
+                        </a>
+                    </li>
+                    <li class="scon2 side-icon3">
+                        <a href="/Financials/Index">
+                            <span></span>
+                            <small>Financials</small>
+                        </a>
+                    </li>
+                    <li class="scon3 side-icon2">
+                        <a href="/Campaign/Index">
+                            <span></span>
+                            <small>Campaigns</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="maincontent clearfix">
+            <div class="side-bar">
+                <a href="#" class="logo">
+                    <figure><img src="@Url.Content("~/assets/images/logo.png")" width="113" height="100" alt="logo"></figure>
+                </a>
+                <ul>
+                    <li id="Home" data-intro="This is the home screen where you will find the instructions and guidance for this demo." class="scon1 side-icon1">
+                        <a href="/Home/Index">
+                            <span></span>
+                            <small>Home</small>
+                        </a>
+                    </li>
+                    <li id="Financials" data-intro="This is the Financials screen which shows attractive KPI's and interactive visuals to enhance financial business intelligence." class="scon2 side-icon3">
+                        <a href="/Financials/Index">
+                            <span></span>
+                            <small>Financials</small>
+                        </a>
+                    </li>
+                    <li id="Campaign" data-intro="This is the Campaigns screen where you can choose which campaign to execute based on the Power BI Embedded interactive visuals available to you." class="scon3 side-icon2">
+                        <a href="/Campaign/Index">
+                            <span></span>
+                            <small>Campaigns</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <script>
+                $('.header-right').clone().appendTo('.side_bar_inn');
+                $('#nav-icon').click(function (e) {
+                    $('body').toggleClass('open');
+                });
+            </script>
+            <section class="recommended">
+                @RenderBody()
+            </section>
+
+
+
+        </div>
+    </div>
+    @RenderSection("Modal",required:false)
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>

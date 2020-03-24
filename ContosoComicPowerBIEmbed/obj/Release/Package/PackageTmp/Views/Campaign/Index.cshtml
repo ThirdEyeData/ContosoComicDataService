@@ -1,0 +1,280 @@
+﻿@using ContosoComicPowerBIEmbed.Models;
+@model Tuple<PowerBIReportDto, Messages, List<PowerBITileDto>>
+@{
+    ViewBag.Title = "Campaign Analysis";
+}
+<header style="background-color:#f8f8f8">
+</header>
+<div class="darken" style="position: fixed;top: 0;left: 0; z-index: 99;width: 100%; height: 100%; background: url(@Url.Content("~/assets/Black.png"));display:none;">
+    <svg class="runproc1" xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="1.0" viewBox="0 0 128 128"
+         xml:space="preserve">
+         
+    <g>
+    <linearGradient id="linear-gradient">
+    <stop offset="0%" stop-color="#ffffff" fill-opacity="0" />
+    <stop offset="100%" stop-color="#00a4ef" fill-opacity="1" />
+    </linearGradient>
+    <path d="M63.85 0A63.85 63.85 0 1 1 0 63.85 63.85 63.85 0 0 1 63.85 0zm.65 19.5a44 44 0 1 1-44 44 44 44 0 0 1 44-44z"
+          fill="url(#linear-gradient)"
+          fill-rule="evenodd" />
+    <animateTransform attributeName="transform" type="rotate" from="0 64 64"
+                      to="360 64 64" dur="1080ms" repeatCount="indefinite" />
+            </g>
+    <text x="22" y="70" font-size="9" fill="white">Running Campaign... </text>
+         </svg>
+</div>
+@if (Model.Item2.DisplayMessage == "")
+{
+    <div id="main">
+        <h3>Recommended Campaigns</h3>
+        <div class="campaign-content">
+            <div class="campaig-1">
+                <a onclick="runcampaign(1)" style="cursor:pointer" data-toggle="modal" data-target="#exampleModal">Campaign 1</a>
+                <p>This campaign will focus on driving social activity in the worst performing regions for Bubble Man. <strong>Campaign cost = $90,000</strong></p>
+            </div>
+            <div class="campaig-1">
+                <a onclick="runcampaign(2)" style="cursor:pointer">Campaign 2</a>
+                <p>This campaign will focus on driving Web Referrals in the worst performing regions for Jumbo Man.  <strong>Campaign cost = $70,000</strong></p>
+            </div>
+            <div class="campaig-1">
+                <a onclick="runcampaign(3)" style="cursor:pointer">Campaign 3</a>
+                <p>This campaign will focus on driving Direct channel improvement in Washington and New York for Flying Girl. <strong>Campaign cost = $60,000</strong></p>
+            </div>
+        </div>
+        <div id="showcase-embedded-view" class="row">
+            <div id="embedContainer" class="iframeContainer active col-md-12 col-sm-12" style="margin-bottom:30px"></div>
+        </div>
+        <div class="row">
+            <div id="tileContainer_TotalVisit_TrafficSource" class="col-md-6 col-sm-12" style="height:360px"></div>
+            <div id="tileContainer_TotalVisit_VisitorType" class="col-md-6 col-sm-12" style="height:360px"></div>
+        </div>
+    </div>
+}
+
+else
+{
+    <div class="row" style="margin-top:5%">
+        <div class="col-md-12 col-xs-12">
+            <p>@Model.Item2.DisplayMessage</p>
+        </div>
+    </div>
+}
+
+
+
+<script src="@Url.Content("~/scripts/PBIResize.js")"></script>
+<script src="@Url.Content("~/scripts/powerbi.js")"></script>
+<script src="@Url.Content("~/scripts/session_utils.js")"></script>
+<script>
+    EmbedTiles();
+    const baseApiUrl = "http://localhost:51025/";
+    var width = $(document).width();
+    if (width < 576) {
+        LayoutShowcaseState.columns = ColumnsNumber.One;
+        document.getElementById("embedContainer").style.height = "2229px";
+    }
+    else if (width < 768) {
+        LayoutShowcaseState.columns = ColumnsNumber.Two;
+        document.getElementById("embedContainer").style.height = "1650px";
+    }
+    else {
+        LayoutShowcaseState.columns = ColumnsNumber.Three;
+        document.getElementById("embedContainer").style.height = "450px";
+    }
+
+    var raccessToken = "@Model.Item1.token.Token";
+    var rembedUrl = "@Model.Item1.EmbedUrl";
+    var rembedReportId = "@Model.Item1.ReportId";
+    $(document).ready(function () {
+        embedCustomLayoutReport("embedContainer");
+        window.addEventListener("resize", renderVisuals);
+    });
+
+    function EmbedTiles()
+    {
+        var models = window['powerbi-client'].models;
+        //Embed Tile for Total Visits By TrafficSource
+        var embedTile_Config_TotalVisit_TrafficSource = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item3[9].token.Token",
+            embedUrl: "@Model.Item3[9].EmbedUrl",
+            id: "@Model.Item3[9].Id",
+            dashboardId: "@Model.Item3[9].dashboardID"
+        }
+        var tileContainer_TotalVisit_TrafficSource = $('#tileContainer_TotalVisit_TrafficSource')[0];
+        powerbi.embed(tileContainer_TotalVisit_TrafficSource, embedTile_Config_TotalVisit_TrafficSource);
+
+        //Embed Tile for Total Visits By VisitorType
+        var embedTile_Config_TotalVisit_VisitorType = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item3[10].token.Token",
+            embedUrl: "@Model.Item3[10].EmbedUrl",
+            id: "@Model.Item3[10].Id",
+            dashboardId: "@Model.Item3[10].dashboardID"
+        }
+        var tileContainer_TotalVisit_VisitorType = $('#tileContainer_TotalVisit_VisitorType')[0];
+        powerbi.embed(tileContainer_TotalVisit_VisitorType, embedTile_Config_TotalVisit_VisitorType);
+    }
+
+    function runcampaign(campaignId)
+    {
+        var models = window['powerbi-client'].models;
+        $('.darken').show();
+        // If Campaign1 is clicked
+        if (campaignId == 1) {
+            var embedTileConfig_1 = null;
+            var embedTileConfig_2 = null;
+            var embedTileConfig_3 = null;
+            embedTileConfig_1 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[0].token.Token",
+                embedUrl: "@Model.Item3[0].EmbedUrl",
+                id: "@Model.Item3[0].Id",
+                dashboardId: "@Model.Item3[0].dashboardID"
+            }
+            embedTileConfig_2 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[1].token.Token",
+                embedUrl: "@Model.Item3[1].EmbedUrl",
+                id: "@Model.Item3[1].Id",
+                dashboardId: "@Model.Item3[1].dashboardID"
+            }
+            embedTileConfig_3 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[6].token.Token",
+                embedUrl: "@Model.Item3[6].EmbedUrl",
+                id: "@Model.Item3[6].Id",
+                dashboardId: "@Model.Item3[6].dashboardID"
+            }
+        }
+
+        // If Campaign2 is clicked
+        if (campaignId == 2) {
+            var embedTileConfig_1 = null;
+            var embedTileConfig_2 = null;
+            var embedTileConfig_3 = null;
+            embedTileConfig_1 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[2].token.Token",
+                embedUrl: "@Model.Item3[2].EmbedUrl",
+                id: "@Model.Item3[2].Id",
+                dashboardId: "@Model.Item3[2].dashboardID"
+            }
+            embedTileConfig_2 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[3].token.Token",
+                embedUrl: "@Model.Item3[3].EmbedUrl",
+                id: "@Model.Item3[3].Id",
+                dashboardId: "@Model.Item3[3].dashboardID"
+            }
+            embedTileConfig_3 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[7].token.Token",
+                embedUrl: "@Model.Item3[7].EmbedUrl",
+                id: "@Model.Item3[7].Id",
+                dashboardId: "@Model.Item3[7].dashboardID"
+            }
+        }
+
+        // If Campaign3 is clicked
+        if (campaignId == 3) {
+            var embedTileConfig_1 = null;
+            var embedTileConfig_2 = null;
+            var embedTileConfig_3 = null;
+            embedTileConfig_1 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[4].token.Token",
+                embedUrl: "@Model.Item3[4].EmbedUrl",
+                id: "@Model.Item3[4].Id",
+                dashboardId: "@Model.Item3[4].dashboardID"
+            }
+            embedTileConfig_2 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[5].token.Token",
+                embedUrl: "@Model.Item3[5].EmbedUrl",
+                id: "@Model.Item3[5].Id",
+                dashboardId: "@Model.Item3[5].dashboardID"
+            }
+            embedTileConfig_3 = {
+                type: "tile",
+                tokenType: models.TokenType.Embed,
+                accessToken: "@Model.Item3[8].token.Token",
+                embedUrl: "@Model.Item3[8].EmbedUrl",
+                id: "@Model.Item3[8].Id",
+                dashboardId: "@Model.Item3[8].dashboardID"
+            }
+        }
+
+        var campaignTile_1_Embed_Container = $("#campaignTile_1_Embed_Container")[0];
+        powerbi.embed(campaignTile_1_Embed_Container, embedTileConfig_1);
+
+        var campaignTile_2_Embed_Container = $("#campaignTile_2_Embed_Container")[0];
+        powerbi.embed(campaignTile_2_Embed_Container, embedTileConfig_2);
+
+        var campaignTile_3_Embed_Container = $("#campaignTile_3_Embed_Container")[0];
+        powerbi.embed(campaignTile_3_Embed_Container, embedTileConfig_3);
+
+        $('.darken').hide();
+        $("#campaignModal").css("display", "block");
+        $(".fade").css("opacity","1");
+    }
+
+    function modalClose() {
+        $("#campaignModal").css("display", "none");
+        $(".fade").css("opacity","0");
+    }
+</script>
+
+<div class="modal fade" id="campaignModal" role="dialog" style="margin-top:2%;">
+    <div class="modal-dialog modal-md" style="width:90%">
+        <div class="modal-content">
+            <div class="modal-header" style="margin-top: 25%;">
+                <button type="button" class="close" onclick="modalClose()" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><strong>CAMPAIGN RESULT</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class='video-wrapper'>
+                    <span style="position:fixed;font-weight:bold;margin-top:2%;margin-left:59%;"><b>ROI</b></span>
+
+                    <div class="row">
+                        <div class="col-md-9 col-sm-12">
+                            <div class="campaig-1 campaig-results">
+                                <span id="CampaignBar1"><a href="#">Campaign 1</a></span>
+                                <p><strong>26.44%</strong></p>
+                            </div>
+                            <div class="campaig-1 campaig-results campaig-2">
+                                <span id="CampaignBar2"><a href="#" style="background-color:#a1a1a1;padding: 21px 51px 23px;">Campaign 2<small>Winner Campaign!&nbsp;&nbsp;<img src="~/assets/images/cupimg.png" alt="img"></small></a></span>
+                                <p> <strong>70.51%</strong></p>
+                            </div>
+                            <div class="campaig-1  campaig-results campaig-3">
+                                <span id="CampaignBar3"><a href="#">Campaign 3</a></span>
+                                <p> <strong>49.78%</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12" id="campaignTile_1_Embed_Container" style="height:320px;"></div>
+                        <div class="col-md-4 col-xs-12" id="campaignTile_2_Embed_Container" style="height:320px;"></div>
+                        <div class="col-md-4 col-xs-12" id="campaignTile_3_Embed_Container" style="height:320px;"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="modalClose()" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

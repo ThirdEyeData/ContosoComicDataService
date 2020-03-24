@@ -1,0 +1,653 @@
+
+
+@media(max-width:1700px) {
+    .maincontent {
+        padding: 73px 30px 73px 40px
+    }
+
+    .recommended {
+        padding: 40px 50px 60px
+    }
+    .campaig-results p {
+        padding: 20px 0 !important;
+        margin: 0 0 0 30px;
+    }
+    .campaig-results span {
+        width: 84%;
+    }
+    .campaig-1 p {
+        padding: 5px 0px 5px 25px;
+    }
+
+    .header-right {
+        padding: 46px 69px 0 0
+    }
+
+    .headleft {
+        padding: 46px 0 0 210px
+    }
+
+    .revenue-blk2.blk5 h5 {
+        padding: 0 0 25px 0
+    }
+
+    .revenue-middle {
+        padding: 0 20px
+    }
+
+    .campaig-1 {
+        margin: 0 0 20px 5px
+    }
+
+    .revenue-blk2 small {
+        padding: 0 0 10px;
+    }
+
+    .revenue-blk1-cnt {
+        left: 20px;
+    }
+
+    .revenue-blk2 {
+        padding: 22px 36px 44px
+    }
+
+    .revenue-blk1 strong {
+        font-size: 50px;
+    }
+
+    .revenue-blk2 h5 {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:1400px) {
+    .revenue-main {
+        width: 23% !important;
+    }
+
+    .revenue-middle {
+        width: 54% !important
+    }
+
+    .revenue-main ul li {
+        padding: 0 0 20px;
+    }
+
+    .revenue-blk1 strong {
+        padding: 0;
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    .revenue-main.revenue-middle.month {
+        width: 100% !important
+    }
+
+    .maincontent {
+        padding: 52px 30px 73px 80px
+    }
+
+    .campaig-1 p {
+        padding: 5px 0px 5px 26px;
+        font-size: 20px;
+    }
+
+    .campaign-content {
+        padding: 40px 0
+    }
+
+    .campaig-1 a {
+        width: 250px;
+    }
+
+    .campaig-results span{width: 84%;}
+    .revenue-blk1 span {
+        padding: 0 0 20px !important;
+        font-size: 18px;
+    }
+
+    .recommended {
+        padding: 0px 30px 30px
+    }
+
+    .revenue-blk2 {
+        padding: 22px 26px 35px !important
+    }
+
+        .revenue-blk2.blk5 {
+            padding: 22px 15px 20px !important
+        }
+
+        .revenue-blk2 h5 {
+            font-size: 15px;
+        }
+
+    .header-right {
+        padding: 46px 39px 0 0
+    }
+}
+
+@media(max-width:1200px) {
+    header h3 {
+        font-size: 30px;
+    }
+
+    .header-right {
+        padding: 41px 39px 0 0
+    }
+
+    .campaig-1 a {
+        width: 170px;
+        font-size: 20px;
+        padding: 22px 15px;
+    }
+    .campaig-results span a {
+        background: #a1a1a1;
+        width: 30%;
+        height: 70px;
+        text-align: left;
+        font-family: 'SegoeUI-SemiBold';
+        padding: 20px 51px;
+        text-transform: capitalize;
+        font-size: 16px;
+        color: #f2f2f2;
+    }
+        .campaig-1 p {
+        font-size: 18px;
+    }
+.campaig-results.campaig-2 span a small {
+    color: #f2f2f2;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: 'SegoeUI-Bold';
+    text-align: right;
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+}
+    .campaig-1 {
+        margin: 0 0 25px;
+    }
+
+    .revenue-main {
+        width: 50% !important;
+    }
+
+    .revenue-middle.hide-mobile {
+        width: 100% !important;
+        float: none;
+        display: none;
+    }
+
+    .revenue-middle.hide-desk {
+        width: 100% !important;
+        float: none;
+        display: block;
+        padding: 0 !important
+    }
+
+    .revenue-main {
+        padding: 0 10px !important;
+    }
+
+    .revenue {
+        margin: 0 -10px
+    }
+
+    .revenue-blk2 figure img {
+        width: 100%
+    }
+
+    .dashboard {
+        padding: 5px 19px 12px 52px
+    }
+
+    .revenue-main.revenue-middle.month {
+        padding: 0 !important
+    }
+
+    .revenue-middle .sales li {
+        padding: 0 15px 30px;
+    }
+
+    .revenue-middle .sales {
+        margin: 0 -15px;
+    }
+
+    .maincontent {
+        padding: 52px 30px 73px 94px
+    }
+}
+
+@media(max-width:1024px) {
+    .logo {
+        padding: 15px 15px 20px
+    }
+
+    .side-bar {
+        width: 114px;
+    }
+
+    .headleft {
+        padding: 30px 0 0 144px
+    }
+
+    .header-right {
+        padding: 25px 33px 0 0
+    }
+
+    header {
+        padding: 0 0 25px;
+    }
+
+    .logo figure img {
+        width: 84px;
+        height: auto;
+    }
+
+    .side-bar ul li > a {
+        width: 85px;
+        height: 85px;
+        padding: 10px 0;
+    }
+
+    .side-bar small {
+        font-size: 12px;
+    }
+
+    .recommended {
+        width: 93%;
+    }
+
+    .maincontent {
+        padding: 37px 30px 73px 80px
+    }
+
+    .campaig-1 p {
+        padding: 5px 0px 5px 15px
+    }
+
+    .revenue-blk2.blk5 h5 {
+        padding: 0 0 10px;
+    }
+}
+
+@media(max-width:991px) {
+
+    .headleft {
+        padding: 30px 0 0 130px;
+    }
+
+    .dashboard:after {
+        width: 30px;
+        height: 30px;
+        background-size: 15px auto;
+    }
+
+    .dashboard {
+        padding: 5px 5px 12px 30px
+    }
+
+    .myacount:after {
+        width: 30px;
+        height: 30px;
+        background-size: 15px auto;
+    }
+
+    .myacount {
+        padding: 12px 0 12px 37px
+    }
+
+        .myacount a {
+            font-size: 16px;
+        }
+
+    .nice-select {
+        font-size: 16px;
+        padding: 14px 25px 6px 8px
+    }
+
+        .nice-select:after {
+            top: 55%;
+        }
+
+    header h3 {
+        font-size: 26px;
+    }
+
+    .recommended h3 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .recommended {
+        padding: 25px 30px 60px
+    }
+
+    .campaig-1 p {
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .campaign-content {
+        padding: 25px 0
+    }
+}
+
+
+
+
+
+
+@media(max-width:767px) {
+    .recommended {
+        width: 90%;
+        padding: 25px 20px 60px
+    }
+    .campaig-results span a {
+        background: #a1a1a1;
+        width: 30%;
+        height: 70px;
+        text-align: left;
+        font-family: 'SegoeUI-SemiBold';
+        padding: 20px 1px;
+        text-transform: capitalize;
+        font-size: 14px;
+        color: #f2f2f2;
+    }
+.campaig-results.campaig-1 span a small {
+    color: #f2f2f2;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: 'SegoeUI-Bold';
+    text-align: right;
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+}
+    .campaig-results.campaig-2 span a small {
+        color: #f2f2f2;
+        font-size: 20px;
+        line-height: 32px;
+        font-family: 'SegoeUI-Bold';
+        text-align: right;
+        display: inline-block;
+        float: right;
+        text-transform: uppercase;
+    }
+.campaig-results.campaig-3 span {
+    color: #f2f2f2;
+    font-size: 20px;
+    line-height: 32px;
+    font-family: 'SegoeUI-Bold';
+    text-align: right;
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+}
+    .maincontent {
+        padding: 30px 16px 73px 80px
+    }
+
+    .recommended h3 {
+        font-size: 26px;
+    }
+
+    .headleft {
+        padding: 0px 0 0 15px;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center
+    }
+
+        .headleft .logo.logo2 {
+            display: inline-block;
+        }
+
+    .logo {
+        padding: 0 0 0px
+    }
+
+    header h3 {
+        padding: 0 0 0 15px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #nav-icon {
+        display: block;
+        position: absolute;
+        top: 26px;
+        right: 0px;
+    }
+
+    .sticky #nav-icon {
+        top: 8px;
+    }
+
+    .side_bar_inn {
+        display: block;
+        width: 200px;
+        background: hsla(210, 3%, 75%, 0.92);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -240px;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        overflow: auto;
+        padding: 44px 15px;
+    }
+
+        .side_bar_inn > ul {
+            padding: 0;
+        }
+
+            .side_bar_inn > ul > li {
+                padding: 8px 0;
+                float: none;
+                display: block;
+                width: 100%;
+                margin: 0;
+                background: none;
+                border: none;
+                position: relative;
+            }
+
+    .menu {
+        text-align: center;
+        margin: 0 auto;
+        position: absolute;
+        right: 14px;
+        top: 15px;
+        z-index: 999;
+        padding: 4px 0;
+    }
+
+    .side_bar_inn nav > ul {
+        display: block;
+        position: static;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .side_bar_inn nav > ul {
+        width: 100%;
+        padding: 0;
+        position: relative;
+    }
+
+    .wrapper {
+        position: relative;
+        top: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -web-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+    }
+
+    body.open {
+        overflow: hidden;
+    }
+
+    .open .wrapper {
+        right: 200px;
+        top: 0px;
+        overflow: hidden;
+    }
+
+    .open {
+        position: fixed;
+    }
+
+        .open .side_bar_inn {
+            right: 0
+        }
+
+        .open .menu {
+        }
+
+        .open #nav-icon {
+            top: 34px;
+        }
+
+        .open .side_bar_inn .side-bar {
+            position: static;
+            width: 100%;
+            background: none;
+            display: block;
+            height: auto
+        }
+
+    .side-bar {
+        display: none;
+    }
+
+    .header-right {
+        padding: 0 15px;
+    }
+
+    .maincontent {
+        margin: 0 0px;
+        padding: 15px 15px 15px;
+    }
+
+    .recommended {
+        width: 100%;
+        padding: 30px 15px;
+    }
+
+    .side_bar_inn ul li a {
+        width: 100%;
+        width: 100%;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .open .side_bar_inn .header-right {
+        display: block;
+    }
+
+    .open .side_bar_inn .logo {
+        display: none;
+    }
+
+    .side-bar small br {
+        display: none;
+    }
+
+    .header-right {
+        padding: 0;
+        text-align: left;
+        float: none;
+    }
+
+    .myacount {
+        display: block
+    }
+
+    .nice-select {
+        position: relative;
+    }
+
+    .logo {
+        background: none;
+    }
+
+    .revenue-middle .sales li {
+        width: 100% !important;
+        float: none;
+        padding: 0 0 20px;
+    }
+
+    .campaig-1 a {
+        padding: 15px 10px;
+    }
+
+    .revenue-middle .sales {
+        margin: 0;
+    }
+
+    header h3 {
+        font-size: 18px;
+    }
+
+    .side-bar ul {
+        padding: 0;
+    }
+}
+
+@media(max-width: 599px) {
+    .campaig-1 {
+        display: block !important;
+        margin: 0 0 15px;
+    }
+
+        .campaig-1 a {
+            width: 100%;
+        }
+
+        .campaig-1 p {
+            padding: 15px 0 0 0;
+        }
+
+    .recommended h3 {
+        font-size: 24px;
+        line-height: 28px;
+        letter-spacing: 0
+    }
+
+    .revenue-main {
+        width: 100% !important
+    }
+}
+
+@media(max-width:479px) {
+    .recommended h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .headleft {
+        display: block !important;
+    }
+
+    header h3 {
+        padding: 0;
+    }
+}
