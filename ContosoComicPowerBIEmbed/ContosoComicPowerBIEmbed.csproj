@@ -255,6 +255,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\Black.png" />
+    <Content Include="assets\css\mediaQuery.css" />
     <Content Include="assets\fonts\SegoeUI-Bold\preview.html" />
     <Content Include="assets\fonts\SegoeUI-Bold\SegoeUI-Bold.svg" />
     <Content Include="assets\fonts\SegoeUI-Bold\styles.css" />
@@ -358,13 +360,16 @@
     <None Include="Properties\PublishProfiles\contosocomicshop - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - FTP2.pubxml" />
+    <None Include="Properties\PublishProfiles\contosocomicshop - FTP3.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - ReadOnly - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - ReadOnly - FTP2.pubxml" />
+    <None Include="Properties\PublishProfiles\contosocomicshop - ReadOnly - FTP3.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy3.pubxml" />
+    <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy4.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
