@@ -123,9 +123,14 @@ else
     {
         var models = window['powerbi-client'].models;
         $('.darken').show();
-
+        var selectedCampaignText = "";
         // If Campaign1 is clicked
         if (campaignId == 1) {
+            selectedCampaignText = "CAMPAIGN 1";
+            $("#campaignTitle").text(selectedCampaignText);
+            $("#CampaignBar1").css("background-color", "#00a4ef");
+            $("#CampaignBar2").css("background-color", "");
+            $("#CampaignBar3").css("background-color", "");
             var embedTileConfig_1 = null;
             var embedTileConfig_2 = null;
             var embedTileConfig_3 = null;
@@ -157,6 +162,13 @@ else
 
         // If Campaign2 is clicked
         if (campaignId == 2) {
+
+            selectedCampaignText = "CAMPAIGN 2";
+            $("#campaignTitle").text(selectedCampaignText);
+            $("#CampaignBar1").css("background-color", "");
+            $("#CampaignBar2").css("background-color", "#00a4ef");
+            $("#CampaignBar3").css("background-color", "");
+
             var embedTileConfig_1 = null;
             var embedTileConfig_2 = null;
             var embedTileConfig_3 = null;
@@ -188,6 +200,13 @@ else
 
         // If Campaign3 is clicked
         if (campaignId == 3) {
+
+            selectedCampaignText = "CAMPAIGN 3";
+            $("#campaignTitle").text(selectedCampaignText);
+            $("#CampaignBar1").css("background-color", "");
+            $("#CampaignBar2").css("background-color", "");
+            $("#CampaignBar3").css("background-color", "#00a4ef");
+
             var embedTileConfig_1 = null;
             var embedTileConfig_2 = null;
             var embedTileConfig_3 = null;
@@ -230,12 +249,7 @@ else
             $('.darken').hide();
             $("#campaignModal").css("display", "block");
             $(".fade").css("opacity","1");
-            //$('.darken').hide();
-            //$('#campaignModal').modal('toggle');
         }, 1000);
-        //$('.darken').hide();
-        //$("#campaignModal").css("display", "block");
-        //$(".fade").css("opacity","1");
     }
 
     function modalClose() {
@@ -249,7 +263,7 @@ else
         <div class="modal-content">
             <div class="modal-header" style="margin-top: 17%;" id="modelHeader">
                 <button type="button" class="close" onclick="modalClose()" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><strong>CAMPAIGN RESULT</strong></h4>
+                <h4 class="modal-title" id="campaignTitle" style="font-weight:bold;">CAMPAIGN RESULT</h4>
             </div>
             <div class="modal-body">
                 <div class='video-wrapper'>
@@ -258,15 +272,15 @@ else
                     <div class="row">
                         <div class="col-md-9 col-sm-12">
                             <div class="campaig-1 campaig-results">
-                                <span id="CampaignBar1"><a href="#">Campaign 1</a></span>
+                                <span><a href="#" id="CampaignBar1">Campaign 1</a></span>
                                 <p><strong>26.44%</strong></p>
                             </div>
                             <div class="campaig-1 campaig-results campaig-2">
-                                <span id="CampaignBar2"><a href="#" style="background-color:#a1a1a1;padding: 21px 51px 23px;">Campaign 2<small>Winner Campaign!&nbsp;&nbsp;<img src="~/assets/images/cupimg.png" alt="img"></small></a></span>
+                                <span><a href="#" id="CampaignBar2" style="background-color:#a1a1a1;padding: 21px 51px 23px;">Campaign 2<small>Winner Campaign!&nbsp;&nbsp;<img src="~/assets/images/cupimg.png" alt="img"></small></a></span>
                                 <p> <strong>70.51%</strong></p>
                             </div>
-                            <div class="campaig-1  campaig-results campaig-3">
-                                <span id="CampaignBar3"><a href="#">Campaign 3</a></span>
+                            <div class="campaig-1 campaig-results campaig-3">
+                                <span><a href="#" id="CampaignBar3">Campaign 3</a></span>
                                 <p> <strong>49.78%</strong></p>
                             </div>
                         </div>

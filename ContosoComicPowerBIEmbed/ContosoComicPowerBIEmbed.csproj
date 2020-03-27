@@ -238,6 +238,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AIInsightController.cs" />
     <Compile Include="Controllers\CampaignController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -275,6 +276,7 @@
     <Content Include="assets\images\cupimg.png" />
     <Content Include="assets\images\dashboarico.png" />
     <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\insight.png" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\logo2.png" />
     <Content Include="assets\images\menu-icon-hover1.png" />
@@ -371,6 +373,7 @@
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy3.pubxml" />
     <None Include="Properties\PublishProfiles\contosocomicshop - Web Deploy4.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\AIInsight\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

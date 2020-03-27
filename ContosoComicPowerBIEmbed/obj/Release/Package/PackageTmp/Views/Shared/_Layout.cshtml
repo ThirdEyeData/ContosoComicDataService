@@ -40,6 +40,9 @@
             else if (path.includes('Campaign')) {
                 $('.scon3').addClass("active");
             }
+            else if (path.includes('AIInsight')) {
+                $('.scon4').addClass("active");
+            }
             else {
                 $('.scon1').addClass("active");
                 first = "@Session["First"]";
@@ -111,6 +114,12 @@
                             <small>Campaigns</small>
                         </a>
                     </li>
+                    <li class="scon4 side-icon4">
+                        <a href="/AIInsight/Index">
+                            <span></span>
+                            <small>AI Insight</small>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -136,7 +145,13 @@
                     <li id="Campaign" data-intro="This is the Campaigns screen where you can choose which campaign to execute based on the Power BI Embedded interactive visuals available to you." class="scon3 side-icon2">
                         <a href="/Campaign/Index">
                             <span></span>
-                            <small>Campaigns</small>
+                            <small>Campaign</small>
+                        </a>
+                    </li>
+                    <li id="Campaign" data-intro="This is the AI Insight Screen where you can decomposition tree based on the Power BI Embedded interactive visuals available to you." class="scon4 side-icon4">
+                        <a href="/AIInsight/Index">
+                            <span></span>
+                            <small>AI Insight</small>
                         </a>
                     </li>
                 </ul>

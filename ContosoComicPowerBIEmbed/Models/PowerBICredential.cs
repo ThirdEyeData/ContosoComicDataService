@@ -17,5 +17,6 @@ namespace ContosoComicPowerBIEmbed.Models
         public string CampaignDashboardID { get; set; }
         public string Secret { get; set; }
         public string AuthorityUrl { get; set; }
+        public string AIInsightReportID { get; set; }
     }
 }

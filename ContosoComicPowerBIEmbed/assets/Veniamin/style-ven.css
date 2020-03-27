@@ -251,7 +251,7 @@ body {
     -moz-transition: all ease-in-out 0.3s;
     /* padding: 83.39px 0 0 0; */
     max-width: 100%;
-    background: url(../images/backgroundimg.jpg) no-repeat center;
+    /*background: url(../images/backgroundimg.jpg) no-repeat center;*/
     background-size: cover;
 }
 
@@ -312,7 +312,7 @@ body {
     text-transform: uppercase;
 }
 .campaig-results.campaig-2 span a {
-    background: #00a4ef;
+    /*background: #00a4ef;*/
     width: 80%;
     padding: 21px 19px 23px;
 }

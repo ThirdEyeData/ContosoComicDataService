@@ -1,0 +1,53 @@
+﻿@using ContosoComicPowerBIEmbed.Models;
+@model Tuple<PowerBIReportDto, Messages>
+@{
+    ViewBag.Title = "AI Insights";
+}
+<header style="background-color:#f8f8f8">
+</header>
+
+@if (Model.Item2.DisplayMessage == "")
+{
+    <h3>AI Insights</h3>
+    <div id="showcase-embedded-view" class="row" style="margin-top:5%">
+        <div id="embedContainer" class="iframeContainer active col-md-12 col-sm-12" style="margin-bottom:30px; overflow:scroll"></div>
+    </div>
+}
+
+@if (Model.Item2.DisplayMessage != "")
+{
+    <div class="row" style="margin-top:5%">
+        <div class="col-md-12 col-xs-12">
+            <p>@Model.Item2.DisplayMessage</p>
+        </div>
+    </div>
+}
+
+<script src="@Url.Content("~/Scripts/PBIResize.js")"></script>
+<script src="@Url.Content("~/Scripts/session_utils.js")"></script>
+<script>
+    var width = $(document).width();
+    if (width < 576)
+    {
+        LayoutShowcaseState.columns = ColumnsNumber.One;
+        document.getElementById("embedContainer").style.height = "2229px";
+    }
+    else if (width < 768)
+    {
+        LayoutShowcaseState.columns = ColumnsNumber.Two;
+        document.getElementById("embedContainer").style.height = "1650px";
+    }
+    else
+    {
+        LayoutShowcaseState.columns = ColumnsNumber.One;
+        document.getElementById("embedContainer").style.height = "450px";
+    }
+
+    var raccessToken = "@Model.Item1.token.Token";
+    var rembedUrl = "@Model.Item1.EmbedUrl";
+    var rembedReportId = "@Model.Item1.ReportId";
+    $(document).ready(function () {
+        embedCustomLayoutReport();
+        window.addEventListener("resize", renderVisuals);
+    });
+</script>
