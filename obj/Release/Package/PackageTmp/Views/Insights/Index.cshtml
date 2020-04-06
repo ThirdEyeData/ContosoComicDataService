@@ -1,0 +1,67 @@
+﻿@using ContosoComic.PowerBI.Embed.Models
+@model Tuple<List<PowerBITileDto>, Messages>
+@{
+    ViewBag.Title = "Insights | Contoso Comic Store";
+}
+
+<main id="content" role="main">
+    <!-- Section -->
+    <section class="space-top-2 space-bottom-1 position-relative bg-img-hero text-lg-center" style="background-image: url(~/assets/svg-2/abstract-shapes-12.svg);">
+        <div class="container pt-11 pt-lg-4">
+            <h1 class="h3 mb-0">Insights</h1>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    @if (Model.Item2.DisplayMessage == "")
+    {
+        <section class="container space-1">
+            <div id="embedContainer" class="mx-lg-n3"></div>
+        </section>
+    }
+    else
+    {
+        <section class="container space-1">
+            <div class="mx-lg-n3">
+                <p>@Model.Item2.DisplayMessage</p>
+            </div>
+        </section>
+    }
+</main>
+<script src="@Url.Content("~/assets/js/custom/PBIResize.js")"></script>
+<script src="@Url.Content("~/assets/js/custom/session_utils.js")"></script>
+<script>
+    $(document).ready(function () {
+        var width = $(document).width();
+        if (width < 576)
+        {
+            LayoutShowcaseState.columns = ColumnsNumber.One;
+            document.getElementById("embedContainer").style.height = "2229px";
+        }
+        else if (width < 768)
+        {
+            LayoutShowcaseState.columns = ColumnsNumber.Two;
+            document.getElementById("embedContainer").style.height = "1650px";
+        }
+        else
+        {
+            LayoutShowcaseState.columns = ColumnsNumber.Three;
+            document.getElementById("embedContainer").style.height = "600px";
+        }
+        var models = window['powerbi-client'].models;
+        var embedTileConfig = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item1[0].token.Token",
+            embedUrl: "@Model.Item1[0].EmbedUrl",
+            id: "@Model.Item1[0].Id",
+            dashboardId: "@Model.Item1[0].dashboardID"
+        }
+    
+        var insightTile_Embed_Container = $("#embedContainer")[0];
+        powerbi.embed(insightTile_Embed_Container, embedTileConfig);
+        $("#embedContainer").css("box-shadow", "0px 12px 15px rgba(140, 152, 164, 0.2)");
+    })
+    
+</script>
+

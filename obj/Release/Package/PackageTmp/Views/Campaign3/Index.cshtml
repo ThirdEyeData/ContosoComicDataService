@@ -1,0 +1,115 @@
+﻿@using ContosoComic.PowerBI.Embed.Models
+@model Tuple<Messages, List<PowerBITileDto>>
+@{
+    ViewBag.Title = "Campaign 3 | Contoso Comic Store";
+}
+
+    <main id="content" role="main">
+        <!-- Section -->
+        <section class="space-top-2 space-bottom-1 position-relative bg-img-hero text-lg-center" style="background-image: url(~/assets/svg-2/abstract-shapes-12.svg);">
+            <div class="container pt-11 pt-lg-4">
+                <h1 class="h3 mb-0">Campaign 3</h1>
+            </div>
+        </section>
+        <!-- End Section -->
+
+        <section class="container space-1">
+            <div class="w-xl-80 mx-xl-auto mb-9">
+                <div class="row mb-3 align-items-center">
+                    <div class="col-10 col-md-11">
+                        <div class="progress" style="height: 50px;">
+                            <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 26.44%;" aria-valuenow="26.44" aria-valuemin="0" aria-valuemax="100">
+                                <div class="font-size-1">Campaign 1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 col-md-1 text-right font-weight-bold text-dark">
+                        26.44%;
+                    </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                    <div class="col-10 col-md-11">
+                        <div class="progress" style="height: 50px;">
+                            <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 70.51%;" aria-valuenow="70.51" aria-valuemin="0" aria-valuemax="100">
+                                <div class="font-size-1">Campaign 2 <span class="text-cap ml-5">Winner Campaign! <i class="fas fa-trophy ml-2"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 col-md-1 text-right font-weight-bold text-dark">
+                        70.51%;
+                    </div>
+                </div>
+
+                <div class="row mb-3 align-items-center">
+                    <div class="col-10 col-md-11">
+                        <div class="progress" style="height: 50px;">
+                            <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 49.78%;" aria-valuenow="49.78" aria-valuemin="0" aria-valuemax="100">
+                                <div class="font-size-1">Campaign 3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 col-md-1 text-right font-weight-bold text-dark">
+                        49.78%;
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-7 py-lg-3">
+            <div class="row">
+                <div class="col-lg-4 col-xs-12 col-md-4">
+                    <div class="card" id="campaignTile_1_Embed_Container" style="height:360px"></div>
+                </div>
+                <div class="col-lg-4 col-xs-12 col-md-4">
+                    <div class="card" id="campaignTile_2_Embed_Container" style="height:360px"></div>
+                </div>
+                <div class="col-lg-4 col-xs-12 col-md-4">
+                    <div class="card" id="campaignTile_3_Embed_Container" style="height:360px"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="@Url.Content("~/assets/js/custom/PBIResize.js")"></script>
+<script src="@Url.Content("~/assets/js/custom/session_utils.js")"></script>
+<script>
+    $(document).ready(function () {
+        var models = window['powerbi-client'].models;
+        var embedTileConfig_1 = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item2[0].token.Token",
+            embedUrl: "@Model.Item2[0].EmbedUrl",
+            id: "@Model.Item2[0].Id",
+            dashboardId: "@Model.Item2[0].dashboardID"
+        };
+        var embedTileConfig_2 = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item2[1].token.Token",
+            embedUrl: "@Model.Item2[1].EmbedUrl",
+            id: "@Model.Item2[1].Id",
+            dashboardId: "@Model.Item2[1].dashboardID"
+        };
+        var embedTileConfig_3 = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item2[2].token.Token",
+            embedUrl: "@Model.Item2[2].EmbedUrl",
+            id: "@Model.Item2[2].Id",
+            dashboardId: "@Model.Item2[2].dashboardID"
+        };
+            var campaignTile_1_Embed_Container = $("#campaignTile_1_Embed_Container")[0];
+        powerbi.embed(campaignTile_1_Embed_Container, embedTileConfig_1);
+
+        var campaignTile_2_Embed_Container = $("#campaignTile_2_Embed_Container")[0];
+        powerbi.embed(campaignTile_2_Embed_Container, embedTileConfig_2);
+
+        var campaignTile_3_Embed_Container = $("#campaignTile_3_Embed_Container")[0];
+        powerbi.embed(campaignTile_3_Embed_Container, embedTileConfig_3);
+    })
+</script>
+

@@ -1,0 +1,32 @@
+/*------------------------------------
+  File for your custom SCSS style
+------------------------------------*/
+
+html {
+  height: 100%;
+}
+
+.scrolled .navbar-brand > img {
+  width: 3.5rem;
+}
+
+.navbar-toggler {
+  background-color: $light;
+  color: $primary;
+}
+
+iframe {
+  border: 0;
+}
+
+.footer-bg {
+  background-color: #8e5e59;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.min-h-100 {
+  min-height: 100%;
+}

@@ -1,0 +1,160 @@
+﻿@using ContosoComic.PowerBI.Embed.Models
+@model Tuple<Messages, List<PowerBITileDto>>
+@{
+    ViewBag.Title = "Campaigns | Contoso Comic Store";
+}
+
+<main id="content" role="main">
+    <!-- Section -->
+    <section class="space-top-2 space-bottom-1 position-relative bg-img-hero text-lg-center" style="background-image: @Url.Content("~/assets/svg-2/abstract-shapes-12.svg");">
+        <div class="container pt-11 pt-lg-4">
+            <h1 class="h3 mb-0">Recommended Campaigns</h1>
+        </div>
+    </section>
+    <!-- End Section -->
+
+    <section class="container space-1">
+        <div class="w-xl-80 mx-xl-auto">
+            <!-- Pricing -->
+            <a class="card text-reset p-4 mb-3 mb-md-1" href="campaign-1.html">
+                <div class="row align-items-sm-center">
+                    <div class="col">
+                        <div class="media align-items-center">
+                            <div class="min-w-8rem mr-2">
+                                <figure class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 160 160">
+                                        <circle fill="#FC4B00" opacity=".85" cx="80" cy="80" r="48"></circle>
+                                    </svg>
+                                </figure>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="mb-0">Campaign 1</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 col-md-6">
+                        This campaign will focus on driving social activity in the worst performing regions for Bubble Man.
+                    </div>
+                    <div class="col-12 col-md col-lg-4 col-xl-3 text-lg-center mt-3 mt-lg-0">
+                        <strong class="d-block font-size-2 text-dark">$90,000</strong>
+                        <span class="font-size-1">campaign cost</span>
+                    </div>
+                </div>
+            </a>
+            <!-- End Pricing -->
+            <!-- Pricing -->
+            <a class="card text-reset p-4 mb-3 mb-md-1" href="campaign-2.html">
+                <div class="row align-items-sm-center">
+                    <div class="col">
+                        <div class="media align-items-center">
+                            <div class="min-w-8rem mr-2">
+                                <figure class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 160 160">
+                                        <circle fill="#FC4B00" opacity=".85" cx="48" cy="53" r="48"></circle>
+                                        <circle fill="#FC4B00" opacity=".85" cx="112" cy="53" r="48"></circle>
+                                        <circle fill="#FC4B00" opacity=".85" cx="81" cy="107" r="48"></circle>
+                                    </svg>
+                                </figure>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="mb-0">Campaign 2</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 col-md-6">
+                        This campaign will focus on driving Web Referrals in the worst performing regions for Jumbo Man.
+                    </div>
+                    <div class="col-12 col-md col-lg-4 col-xl-3 text-lg-center mt-3 mt-lg-0">
+                        <strong class="d-block font-size-2 text-dark">$70,000</strong>
+                        <span class="font-size-1">campaign cost</span>
+                    </div>
+                </div>
+            </a>
+            <!-- End Pricing -->
+            <!-- Pricing -->
+            <a class="card text-reset p-4 mb-3 mb-md-1" href="campaign-3.html">
+                <div class="row align-items-sm-center">
+                    <div class="col">
+                        <div class="media align-items-center">
+                            <div class="min-w-8rem mr-2">
+                                <figure class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="56" height="56" viewBox="0 0 160 160">
+                                        <circle fill="#FC4B00" opacity=".85" cx="80" cy="80" r="48"></circle>
+                                    </svg>
+                                </figure>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="mb-0">Campaign 3</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 col-md-6">
+                        This campaign will focus on driving Direct channel improvement in Washington and New York for Flying Girl.
+                    </div>
+                    <div class="col-12 col-md col-lg-4 col-xl-3 text-lg-center mt-3 mt-lg-0">
+                        <strong class="d-block font-size-2 text-dark">$60,000</strong>
+                        <span class="font-size-1">campaign cost</span>
+                    </div>
+                </div>
+            </a>
+            <!-- End Pricing -->
+        </div>
+    </section>
+
+    @if (Model.Item1.DisplayMessage == "")
+    {
+        <section class="container py-7 py-lg-3">
+            <div class="row">
+                <div class="col-lg-6 mb-3 mb-lg-0">
+                    <div class="card" id="tileContainer_TotalVisit_TrafficSource" style="height:360px"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" id="tileContainer_TotalVisit_VisitorType" style="height:360px"></div>
+                </div>
+            </div>
+        </section>
+    }
+    else
+    {
+        <section class="container py-7 py-lg-3">
+            <div class="mx-lg-n3">
+                <p>@Model.Item1.DisplayMessage</p>
+            </div>
+        </section>
+    }
+</main>
+<script src="@Url.Content("~/assets/js/custom/PBIResize.js")"></script>
+<script src="@Url.Content("~/assets/js/custom/session_utils.js")"></script>
+<script>
+    $(document).ready(function() {
+        EmbedTiles();
+    })
+    function EmbedTiles()
+    {
+        var models = window['powerbi-client'].models;
+        //Embed Tile for Total Visits By TrafficSource
+        var embedTile_Config_TotalVisit_TrafficSource = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item2[0].token.Token",
+            embedUrl: "@Model.Item2[0].EmbedUrl",
+            id: "@Model.Item2[0].Id",
+            dashboardId: "@Model.Item2[0].dashboardID"
+        }
+        var tileContainer_TotalVisit_TrafficSource = $('#tileContainer_TotalVisit_TrafficSource')[0];
+        powerbi.embed(tileContainer_TotalVisit_TrafficSource, embedTile_Config_TotalVisit_TrafficSource);
+
+        //Embed Tile for Total Visits By VisitorType
+        var embedTile_Config_TotalVisit_VisitorType = {
+            type: "tile",
+            tokenType: models.TokenType.Embed,
+            accessToken: "@Model.Item2[1].token.Token",
+            embedUrl: "@Model.Item2[1].EmbedUrl",
+            id: "@Model.Item2[1].Id",
+            dashboardId: "@Model.Item2[1].dashboardID"
+        }
+        var tileContainer_TotalVisit_VisitorType = $('#tileContainer_TotalVisit_VisitorType')[0];
+        powerbi.embed(tileContainer_TotalVisit_VisitorType, embedTile_Config_TotalVisit_VisitorType);
+    }
+</script>
+

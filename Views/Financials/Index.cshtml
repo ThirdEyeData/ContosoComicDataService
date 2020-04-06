@@ -1,0 +1,56 @@
+﻿@using ContosoComic.PowerBI.Embed.Models
+@model Tuple<PowerBIReportDto, Messages>
+@{
+    ViewBag.Title = "Financials | Contoso Comic Store";
+}
+
+<main id="content" role="main">
+    <!-- Section -->
+    <section class="space-top-2 space-bottom-1 position-relative bg-img-hero text-lg-center" style="background-image: @Url.Content("~/assets/svg-2/abstract-shapes-12.svg");">
+        <div class="container pt-11 pt-lg-4">
+            <h1 class="h3 mb-0">Financials Report</h1>
+        </div>
+    </section>
+    <!-- End Section -->
+    @if (Model.Item2.DisplayMessage == "")
+    {
+        <section class="container py-7 py-lg-3">
+            <div id="embedContainer" class="mx-lg-n3"></div>
+        </section>
+    }
+    else
+    {
+        <section class="container py-7 py-lg-3">
+            <div class="mx-lg-n3">
+                <p>@Model.Item2.DisplayMessage</p>
+            </div>
+        </section>
+    }
+</main>
+<script src="@Url.Content("~/assets/js/custom/PBIResize.js")"></script>
+<script src="@Url.Content("~/assets/js/custom/session_utils.js")"></script>
+<script>
+    var width = $(document).width();
+    if (width < 576) {
+        LayoutShowcaseState.columns = ColumnsNumber.One;
+        document.getElementById("embedContainer").style.height = "2229px";
+    }
+    else if (width < 768) {
+        LayoutShowcaseState.columns = ColumnsNumber.Two;
+        document.getElementById("embedContainer").style.height = "1650px";
+    }
+    else {
+        LayoutShowcaseState.columns = ColumnsNumber.Three;
+        document.getElementById("embedContainer").style.height = "450px";
+    }
+
+    var raccessToken = "@Model.Item1.token.Token";
+    var rembedUrl = "@Model.Item1.EmbedUrl";
+    var rembedReportId = "@Model.Item1.ReportId";
+    $(document).ready(function () {
+        embedCustomLayoutReport();
+        window.addEventListener("resize", renderVisuals);
+        $("#embedContainer").css("box-shadow", "0px 12px 15px rgba(140, 152, 164, 0.2)");
+    });
+</script>
+

@@ -1,0 +1,33 @@
+// user-variables.scss
+// Use this to overwrite Bootstrap and Front variables
+//
+
+
+$primary:                                                   #FC4B00;
+
+$header-navbar-brand-width:                                 4rem;
+$brand-max-width:                                           3.5rem;
+$header-navbar-brand-mobile-width:                          $header-navbar-brand-width;
+$header-nav-link-padding-x:                                 2rem;
+
+$light:                                                     rgba(#fee69a, .1);
+// $dark:                                                      #8e5e59;
+
+$header-nav-link-active-color:                              $dark;
+
+$theme-colors: map-merge((
+  "white":                                                  $white
+), $theme-colors);
+
+$go-to-color:                                               $primary;
+$go-to-hover-color:                                         $white;
+
+$go-to-bg-color:                                            $light;
+$go-to-bg-hover-color:                                      $primary;
+
+$progress-bg:                                               $light;
+
+$border-color:                                              rgba(252,75,0, .1);
+$input-border-color:                                        $gray-300;
+
+$close-color:                                               #8e5e59;
