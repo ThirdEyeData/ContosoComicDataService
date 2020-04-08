@@ -16,7 +16,7 @@
             <div class="row mb-3 align-items-center">
                 <div class="col-10 col-md-11">
                     <div class="progress" style="height: 50px;">
-                        <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 26.44%;" aria-valuenow="26.44" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar text-left px-3 px-lg-5" id="campaign1_Bar" role="progressbar" style="width: 26.44%; background-color: #71afe5 !important" aria-valuenow="26.44" aria-valuemin="0" aria-valuemax="100">
                             <div class="font-size-1">Campaign 1</div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
             <div class="row mb-3 align-items-center">
                 <div class="col-10 col-md-11">
                     <div class="progress" style="height: 50px;">
-                        <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 70.51%;" aria-valuenow="70.51" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar text-left px-3 px-lg-5" id="campaign2_Bar" role="progressbar" style="width: 70.51%; background-color: #407855 !important" aria-valuenow="70.51" aria-valuemin="0" aria-valuemax="100">
                             <div class="font-size-1">Campaign 2 <span class="text-cap ml-5">Winner Campaign! <i class="fas fa-trophy ml-2"></i></span></div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
             <div class="row mb-3 align-items-center">
                 <div class="col-10 col-md-11">
                     <div class="progress" style="height: 50px;">
-                        <div class="progress-bar text-left px-3 px-lg-5" role="progressbar" style="width: 49.78%;" aria-valuenow="49.78" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar text-left px-3 px-lg-5" id="camapign3_Bar" role="progressbar" style="width: 49.78%;" aria-valuenow="49.78" aria-valuemin="0" aria-valuemax="100">
                             <div class="font-size-1">Campaign 3</div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                 <div class="card" id="campaignTile_2_Embed_Container" style="height:360px"></div>
             </div>
             <div class="col-lg-4 col-xs-12 col-md-4">
-                <div class="card" id="campaignTile_3_Embed_Container" style="height:360px"></div>
+                <div class="card" id="campaignTile_3_Embed_Container" style="height: 360px "></div>
             </div>
         </div>
     </section>
@@ -76,6 +76,8 @@
 <script src="@Url.Content("~/assets/js/custom/session_utils.js")"></script>
 <script>
         $(document).ready(function () {
+            //$("#campaign1_Bar").css("background-color", "#71afe5 !important");
+            //$("#campaign2_Bar").css("background-color", "#407855 !important");
             var models = window['powerbi-client'].models;
             var embedTileConfig_1 = {
                 type: "tile",

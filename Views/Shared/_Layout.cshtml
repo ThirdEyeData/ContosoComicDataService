@@ -16,6 +16,9 @@
             $(document).ready(function () {
                 var url = window.location.href;
                 var pageName = url.split('/').slice(-2, -1)[0];
+                if (pageName == "Insights") {
+                    $("#mainBody").css("background-color", "rgba(254, 230, 154, 0.1)");
+                }
                 var activeNavBarMenuId = "";
                 $(".active.dashboard").each(function () {
                     activeNavBarMenuId = $(this).attr('id');
@@ -70,20 +73,20 @@
                                     <li class="navbar-nav-item" id="Financials">
                                         <a class="nav-link" href="/Financials/Index">Financials</a>
                                     </li>
+                                    <li class="navbar-nav-item" id="Insights">
+                                        <a class="nav-link" href="/Insights/Index">Insights</a>
+                                    </li>
                                     <li class="navbar-nav-item" id="CampaignDashbaord">
                                         <a class="nav-link" href="/CampaignDashbaord/Index">Campaign Dashboards</a>
                                     </li>
-                                    <li class="hs-has-sub-menu navbar-nav-item" id="Campaigns">
-                                        <a id="campaignMegaMenu" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="/Campaigns/Index" aria-haspopup="true" aria-expanded="false" aria-labelledby="campaignSubMenu">Campaigns</a>
+                                    <li class="navbar-nav-item" id="Campaigns">
+                                        <a id="campaignMegaMenu" class="nav-link" href="/Campaigns/Index">Campaigns</a>
 
-                                        <div id="campaignSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="campaignMegaMenu" style="min-width: 230px;">
+                                        @*<div id="campaignSubMenu" class="hs-sub-menu dropdown-menu" aria-labelledby="campaignMegaMenu" style="min-width: 230px;">
                                             <a class="dropdown-item" href="/Campaign1/Index">Campaign 1</a>
                                             <a class="dropdown-item" href="/Campaign2/Index">Campaign 2</a>
                                             <a class="dropdown-item" href="/Campaign3/Index">Campaign 3</a>
-                                        </div>
-                                    </li>
-                                    <li class="navbar-nav-item" id="Insights">
-                                        <a class="nav-link pr-lg-0" href="/Insights/Index">Insights</a>
+                                        </div>*@
                                     </li>
                                 </ul>
                             </div>
