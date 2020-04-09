@@ -3749,10 +3749,12 @@
     <Content Include="assets\css\sticky-footer.css" />
     <Content Include="assets\css\theme.css" />
     <Content Include="assets\favicon.png" />
+    <Content Include="assets\img\campaigns.png" />
     <Content Include="assets\img\comic-bg-2.jpg" />
     <Content Include="assets\img\comic-bg-3.jpg" />
     <Content Include="assets\img\comic-bg-4.jpg" />
     <Content Include="assets\img\comic-bg.jpg" />
+    <Content Include="assets\img\financial.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\js\custom\financials.js" />
     <Content Include="assets\js\custom\intro.js" />
